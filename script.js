@@ -52,11 +52,11 @@ function initializeMap() {
     const mapElement = document.getElementById('map');
     if (!mapElement) return;
     mapElement.innerHTML = `
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209271.43943804825!2d-81.04620169999999!3d35.2270869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541fc4fc381a81%3A0x884650e6bf43d164!2sCharlotte%2C%20NC!5e0!3m2!1sen!2sus!4v1700000000000" 
-            width="100%" height="100%" style="border:0; border-radius: 12px;" 
+        <iframe
+            src="https://maps.google.com/maps?q=4716+Ashburner+St,+Philadelphia,+PA+19136&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0; border-radius: 12px;"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Advance Auto Services - Charlotte, NC Service Area">
+            title="Advance Auto Services - 4716 Ashburner St, Philadelphia, PA 19136">
         </iframe>
     `;
 }
