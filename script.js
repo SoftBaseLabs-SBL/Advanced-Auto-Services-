@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.getElementById('mobileToggle');
     const nav = document.getElementById('navLinks');
-
     if (toggle && nav) {
         toggle.addEventListener('click', function() {
             nav.classList.toggle('open');
@@ -69,7 +68,7 @@ function trackEvent(eventName, eventData = {}) {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.btn-primary, .cta-button, a[href^="tel:"]').forEach(button => {
         button.addEventListener('click', function() {
-            trackEvent('cta_click', { button_text: this.textContent.trim(), page: window.location.pathname, element_type: this.tagName });
+            trackEvent('cta_click', { button_text: this.textContent.trim(), page: window.location.pathname });
         });
     });
 });
@@ -83,19 +82,6 @@ window.addEventListener('scroll', function() {
         else if (maxScroll > 50 && maxScroll <= 75) trackEvent('scroll_depth', { depth: '50%' });
         else if (maxScroll > 75) trackEvent('scroll_depth', { depth: '75%' });
     }
-});
-
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        const entries = performance.getEntriesByType('navigation');
-        if (entries.length > 0) {
-            const navEntry = entries[0];
-            trackEvent('page_load_time', {
-                load_time_ms: Math.round(navEntry.loadEventEnd - navEntry.startTime),
-                page: window.location.pathname
-            });
-        }
-    }, 100);
 });
 
 document.addEventListener('click', function(e) {
